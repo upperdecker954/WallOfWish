@@ -111,7 +111,8 @@ module.exports = {
           /\.(js|jsx)$/,
           /\.css$/,
           /\.json$/,
-          /\.svg$/
+          /\.svg$/,
+          /\.scss$/
         ],
         loader: 'url',
         query: {
@@ -138,6 +139,10 @@ module.exports = {
       // tags. If you use code splitting, however, any async bundles will still
       // use the "style" loader inside the async code so CSS from them won't be
       // in the main CSS file.
+      {
+        test: /\.scss$/,
+        loaders: ["style", "css", "sass"]
+      },
       {
         test: /\.css$/,
         loader: ExtractTextPlugin.extract(
